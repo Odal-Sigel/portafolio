@@ -1,3 +1,3 @@
-<header style="text-align: center;">
-    <h1>Portafolio</h1>
+<header>
+    <h1 align="center">Portafolio</h1>
 </header>
