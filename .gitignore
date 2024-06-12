@@ -1,3 +1,6 @@
+# BACKEND
+backend/composer.phar
+
 # FRONTEND
 frontend/node_modules/
 frontend/css/input.css
