@@ -1,0 +1,33 @@
+name: 🚀 Desplegar en servidor 💻
+on:
+    push:
+        branches: [productivo]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Comprobar el repositorio
+              uses: actions/checkout@v4
+
+            - name: Subir los ficheros del backend al servidor mediante FTP
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+              with:
+                  server: ${{ secrets.FTP_SERVIDOR }}
+                  username: ${{ secrets.FTP_USUARIO }}
+                  password: ${{ secrets.FTP_CONTRASENHA }}
+                  port: ${{ secrets.FTP_PUERTO }}
+                  protocol: ftps
+                  local-dir: "./backend/"
+                  server-dir: "./portafolio/backend/"
+
+            - name: Subir los ficheros del frontend al servidor mediante FTP
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+              with:
+                  server: ${{ secrets.FTP_SERVIDOR }}
+                  username: ${{ secrets.FTP_USUARIO }}
+                  password: ${{ secrets.FTP_CONTRASENHA }}
+                  port: ${{ secrets.FTP_PUERTO }}
+                  protocol: ftps
+                  local-dir: "./frontend/"
+                  server-dir: "./portafolio/frontend/"
