@@ -11,21 +11,21 @@ jobs:
               uses: actions/checkout@v4
 
             - name: 🔨 Subir los ficheros del backend al servidor mediante FTP
-              uses: danhendrickson/sftp-transfer-action@v1.23
+              uses: wangyucode/sftp-upload-action@v2.0.2
               with:
-                  server: ${{ secrets.FTP_SERVIDOR }}
-                  user: ${{ secrets.FTP_USUARIO }}
-                  pass: ${{ secrets.FTP_CONTRASENHA }}
+                  host: ${{ secrets.FTP_SERVIDOR }}
+                  username: ${{ secrets.FTP_USUARIO }}
+                  password: ${{ secrets.FTP_CONTRASENHA }}
                   port: ${{ secrets.FTP_PUERTO }}
-                  local-path: "./backend/"
-                  remote-path: "./portafolio/backend/"
+                  localDir: "./backend/"
+                  remoteDir: "./portafolio/backend/"
 
             - name: 🎨 Subir los ficheros del frontend al servidor mediante FTP
-              uses: danhendrickson/sftp-transfer-action@v1.23
+              uses: wangyucode/sftp-upload-action@v2.0.2
               with:
-                  server: ${{ secrets.FTP_SERVIDOR }}
-                  user: ${{ secrets.FTP_USUARIO }}
-                  pass: ${{ secrets.FTP_CONTRASENHA }}
+                  host: ${{ secrets.FTP_SERVIDOR }}
+                  username: ${{ secrets.FTP_USUARIO }}
+                  password: ${{ secrets.FTP_CONTRASENHA }}
                   port: ${{ secrets.FTP_PUERTO }}
-                  local-path: "./frontend/"
-                  remote-path: "./portafolio/frontend/"
+                  localDir: "./frontend/"
+                  remoteDir: "./portafolio/frontend/"
