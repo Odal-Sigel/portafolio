@@ -7,27 +7,25 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Comprobar el repositorio
+            - name: 🐙 Comprobar el repositorio
               uses: actions/checkout@v4
 
-            - name: Subir los ficheros del backend al servidor mediante FTP
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+            - name: 🔨 Subir los ficheros del backend al servidor mediante FTP
+              uses: wangyucode/sftp-upload-action@v2.0.2
               with:
-                  server: ${{ secrets.FTP_SERVIDOR }}
+                  host: ${{ secrets.FTP_SERVIDOR }}
                   username: ${{ secrets.FTP_USUARIO }}
                   password: ${{ secrets.FTP_CONTRASENHA }}
                   port: ${{ secrets.FTP_PUERTO }}
-                  protocol: ftps
-                  local-dir: "./backend/"
-                  server-dir: "./portafolio/backend/"
+                  localDir: "./backend/"
+                  remoteDir: "./portafolio/backend/"
 
-            - name: Subir los ficheros del frontend al servidor mediante FTP
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+            - name: 🎨 Subir los ficheros del frontend al servidor mediante FTP
+              uses: wangyucode/sftp-upload-action@v2.0.2
               with:
-                  server: ${{ secrets.FTP_SERVIDOR }}
+                  host: ${{ secrets.FTP_SERVIDOR }}
                   username: ${{ secrets.FTP_USUARIO }}
                   password: ${{ secrets.FTP_CONTRASENHA }}
                   port: ${{ secrets.FTP_PUERTO }}
-                  protocol: ftps
-                  local-dir: "./frontend/"
-                  server-dir: "./portafolio/frontend/"
+                  localDir: "./frontend/"
+                  remoteDir: "./portafolio/frontend/"
