@@ -1,5 +1,6 @@
 # BACKEND
 backend/composer.phar
+backend/vendor/
 
 # FRONTEND
 frontend/node_modules/
