@@ -11,7 +11,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: 🔨 Subir los ficheros del backend al servidor mediante FTP
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
               with:
                   server: ${{ secrets.FTP_SERVIDOR }}
                   username: ${{ secrets.FTP_USUARIO }}
@@ -22,7 +22,7 @@ jobs:
                   server-dir: "./portafolio/backend/"
 
             - name: 🎨 Subir los ficheros del frontend al servidor mediante FTP
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
               with:
                   server: ${{ secrets.FTP_SERVIDOR }}
                   username: ${{ secrets.FTP_USUARIO }}
