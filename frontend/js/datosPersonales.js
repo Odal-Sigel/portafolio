@@ -4,7 +4,7 @@ const $imagen = document.getElementById("imagen");
 const $avatar = document.getElementById("avatar");
 
 $.ajax({
-    url: "https://api.cornagopablo.com/index.php",
+    url: "https://api.cornagopablo.com/",
     method: "GET",
     success: function (respuesta) {
         respuesta = JSON.parse(respuesta);
