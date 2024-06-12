@@ -16,7 +16,8 @@ jobs:
                   server: ${{ secrets.FTP_SERVIDOR }}
                   username: ${{ secrets.FTP_USUARIO }}
                   password: ${{ secrets.FTP_CONTRASENHA }}
-                  port: 22
+                  port: ${{ secrets.FTP_PUERTO }}
+                  protocol: ftps
                   local-dir: "./backend/"
                   server-dir: "./portafolio/backend/"
 
@@ -26,6 +27,7 @@ jobs:
                   server: ${{ secrets.FTP_SERVIDOR }}
                   username: ${{ secrets.FTP_USUARIO }}
                   password: ${{ secrets.FTP_CONTRASENHA }}
-                  port: 22
+                  port: ${{ secrets.FTP_PUERTO }}
+                  protocol: ftps
                   local-dir: "./frontend/"
                   server-dir: "./portafolio/frontend/"
