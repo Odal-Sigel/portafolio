@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: 🐙 Comprobar el repositorio
-              uses: actions/checkout@v4
+              uses: actions/checkout@v2
 
             - name: 🔨 Subir los ficheros del backend al servidor mediante FTP
               uses: modern-dev/ftp-mirror@v2
